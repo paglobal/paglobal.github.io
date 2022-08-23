@@ -1,0 +1,751 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inconsolata", monospace;
+}
+
+body {
+  user-select: none;
+}
+
+.lb {
+  /*background: rgba(52, 149, 214, 0.2);*/
+  color: #3495d6;
+}
+
+.db {
+  /*background: rgba(52, 73, 94, 0.2);*/
+  color: #34495e;
+}
+
+a:focus,
+button:focus {
+  outline: none !important;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*for nav close and hamburger buttons*/
+nav .active {
+  animation: show 0.3s forwards ease;
+  pointer-events: auto;
+}
+
+nav .inactive {
+  animation: hide 0.3s forwards ease;
+  pointer-events: none;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.communique p .cursor {
+  display: inline-block;
+  width: 3px;
+  height: 18px;
+  margin-left: 1px;
+  background: #34495e;
+}
+
+.communique p .cursor.blink {
+  animation: blink 0.3s infinite linear;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    height: 100%;
+    position: relative;
+    display: flex;
+  }
+
+  body {
+    margin: auto;
+    width: 100%;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav .hamburger,
+  .close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+  }
+
+  nav .hamburger img {
+    height: 20px;
+    width: 20px;
+  }
+
+  nav .close img {
+    height: 17px;
+    width: 17px;
+  }
+
+  nav .ul {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 160px;
+    height: 270px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 6px 6px 0px;
+    z-index: 2;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  nav .ul.open {
+    transform: translate(0%);
+  }
+
+  nav .ul.closed {
+    transform: translate(-110%);
+  }
+
+  nav .ul a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    padding: 12px 18px 12px 10px;
+    margin: 10px 0 10px 0;
+    width: 160px;
+  }
+
+  nav .ul a:active {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-icon {
+    margin-right: 15px;
+    height: 18px;
+  }
+
+  .nav-text {
+    font-size: 15px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main .logo-wrapper {
+    margin-top: 15px;
+    order: 1;
+  }
+
+  main .communique {
+    margin-top: 40px;
+    order: 2;
+  }
+
+  main .logo-wrapper,
+  .communique {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    width: 110px;
+    background: transparent;
+    border-radius: 57% 43% 37% 63% / 45% 52% 48% 55%;
+    /*border-radius: 53% 47% 47% 53% / 48% 50% 50% 52%;*/
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+      15px 25px 10px rgba(0, 0, 0, 0.1), 15px 20px 20px rgba(0, 0, 0, 0.05),
+      inset -10px -10px 15px rgba(255, 255, 255, 0.9);
+  }
+
+  main .logo img {
+    height: 50px;
+  }
+
+  .communique .speed-button {
+    width: 60px;
+    height: 60px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: #34495e;
+    box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 18px;
+    transition: all 0.2s;
+  }
+
+  .communique .speed-button:active {
+    background: #3495d6;
+  }
+
+  .communique .animated-text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 40px;
+    font-size: 19px;
+    font-weight: 800;
+    color: #34495e;
+    height: 250px;
+    width: 70%;
+  }
+
+  .communique .animated-text p {
+    text-align: center;
+    /*this prevents the text from jumping around during typing animation*/
+    width: 100vw;
+  }
+
+  footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer ul {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+  }
+
+  footer li {
+    list-style-type: none;
+  }
+
+  footer li a:active {
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 6px;
+    outline: none;
+  }
+
+  .social-icon {
+    height: 18px;
+    transition: all 0.2s;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+
+  .background.show {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .background.hide {
+    z-index: auto;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  html {
+    display: flex;
+    height: 100%;
+    position: relative;
+  }
+
+  body {
+    margin: auto;
+    width: 100%;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav .hamburger,
+  .close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+  }
+
+  nav .hamburger img {
+    height: 30px;
+    width: 30px;
+  }
+
+  nav .close img {
+    height: 25px;
+    width: 25px;
+  }
+
+  nav .ul {
+    position: absolute;
+    top: 140px;
+    left: 0;
+    height: 370px;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 6px 6px 0px;
+    z-index: 2;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  nav .ul.open {
+    transform: translate(0%);
+  }
+
+  nav .ul.closed {
+    transform: translate(-110%);
+  }
+
+  nav .ul a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    padding: 20px 30px 20px 15px;
+    margin: 10px 0 10px 0;
+    width: 220px;
+  }
+
+  nav .ul a:active {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-icon {
+    margin-right: 15px;
+    height: 25px;
+  }
+
+  .nav-text {
+    font-size: 22px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main .logo-wrapper {
+    margin-top: 15px;
+    order: 1;
+  }
+
+  main .communique {
+    margin-top: 120px;
+    order: 2;
+  }
+
+  main .logo-wrapper,
+  .communique {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 180px;
+    background: transparent;
+    border-radius: 57% 43% 37% 63% / 45% 52% 48% 55%;
+    /*border-radius: 53% 47% 47% 53% / 48% 50% 50% 52%;*/
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+      15px 25px 10px rgba(0, 0, 0, 0.1), 15px 20px 20px rgba(0, 0, 0, 0.05),
+      inset -10px -10px 15px rgba(255, 255, 255, 0.9);
+  }
+
+  main .logo img {
+    height: 80px;
+  }
+
+  .communique .speed-button {
+    width: 110px;
+    height: 110px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: #34495e;
+    box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 30px;
+    transition: all 0.2s;
+  }
+
+  .communique .speed-button:active {
+    background: #3495d6;
+  }
+
+  .communique .animated-text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 120px;
+    font-size: 30px;
+    font-weight: 800;
+    color: #34495e;
+    height: 300px;
+    width: 80%;
+  }
+
+  .communique .animated-text p {
+    text-align: center;
+    /*this prevents the text from jumping around during typing animation*/
+    width: 100vw;
+  }
+
+  .communique p .cursor {
+    height: 30px;
+  }
+
+  footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer ul {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+  }
+
+  footer li {
+    list-style-type: none;
+  }
+
+  footer li a:active {
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 6px;
+    outline: none;
+  }
+
+  .social-icon {
+    height: 28px;
+    transition: all 0.2s;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+
+  .background.show {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .background.hide {
+    z-index: auto;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  html {
+    display: flex;
+    height: 100%;
+  }
+
+  body {
+    margin: auto;
+    width: 100%;
+    height: min-content;
+    display: block;
+  }
+
+  nav .hamburger,
+  .close {
+    display: none;
+  }
+
+  nav .ul {
+    position: static;
+    height: auto;
+    width: 100%;
+    overflow: visible;
+    margin-top: 20px;
+    transition: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: none;
+  }
+
+  nav .ul.closed {
+    transform: translate(0%);
+  }
+
+  nav a:hover {
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+  }
+
+  body:is(.user-is-tabbing) nav a:focus {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  nav .ul a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    padding: 12px 18px 12px 18px;
+    border-radius: 6px;
+    margin: 0;
+    /*width: 240px;*/
+  }
+
+  .nav-icon {
+    margin-right: 5px;
+    height: 22px;
+  }
+
+  .nav-text {
+    font-size: 22px;
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  main .logo-wrapper,
+  .communique {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    min-height: 80vh;
+  }
+
+  main .communique {
+    margin-top: 0;
+    order: 1;
+  }
+
+  main .logo-wrapper {
+    margin-top: 0;
+    order: 2;
+  }
+
+  main .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    background: transparent;
+    border-radius: 57% 43% 37% 63% / 45% 52% 48% 55%;
+    /*border-radius: 53% 47% 47% 53% / 48% 50% 50% 52%;*/
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+      15px 25px 10px rgba(0, 0, 0, 0.1), 15px 20px 20px rgba(0, 0, 0, 0.05),
+      inset -10px -10px 15px rgba(255, 255, 255, 0.9);
+  }
+
+  .communique .speed-button {
+    width: 75px;
+    height: 75px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: #34495e;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 24px;
+    transition: all 0.1s linear;
+  }
+
+  .communique .speed-button:hover {
+    background: #3495d6;
+  }
+
+  body:is(.user-is-tabbing) .speed-button:focus {
+    background: #3495d6;
+  }
+
+  .communique .animated-text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 50px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #34495e;
+    height: 225px;
+    width: 80%;
+  }
+
+  .communique .animated-text p {
+    text-align: center;
+  }
+
+  .communique p .cursor {
+    height: 22px;
+  }
+
+  main .logo img {
+    height: 230px;
+  }
+
+  footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  footer ul {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+  }
+
+  footer li {
+    list-style-type: none;
+  }
+
+  footer li a:hover {
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  body:is(.user-is-tabbing) footer li a:focus {
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 6px;
+    outline: none;
+  }
+
+  .social-icon {
+    height: 28px;
+    transition: all 0.2s;
+  }
+
+  .background.show,
+  .background.hide {
+    display: none;
+  }
+}
