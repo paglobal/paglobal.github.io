@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "rimraf pages && node dev.js"
+    "dev": "rimraf pages && node dev.js",
+    "cleanup": "rimraf pages"
   },
   "license": "MIT",
   "devDependencies": {

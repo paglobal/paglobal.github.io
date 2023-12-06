@@ -8,13 +8,8 @@ import fs from "fs-extra";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
-const watcher = chokidar.watch(`${__dirname}content`, {
-  ignored: /(^|[\/\\])\../, // ignore dotfiles
-  persistent: true,
-});
-
 function getNewPath(path) {
-  let isMarkdownFile = false;
+  let isMarkdownOrHTMLFile = false;
   let isHome = path.includes("content/home");
   // make sure we don't replace any other path segment named `content` that we don't intend to
   let firstContentKeywordReplaced = false;
@@ -31,8 +26,8 @@ function getNewPath(path) {
     .split(".")
     .map((segment, i) => {
       if (i === lastPathSegment.split(".").length - 1) {
-        if (segment === "md") {
-          isMarkdownFile = true;
+        if (segment === "md" || segment === "html") {
+          isMarkdownOrHTMLFile = true;
           return "html";
         } else {
           return segment;
@@ -44,7 +39,7 @@ function getNewPath(path) {
     .join(".");
   pathSegments[pathSegments.length - 1] = newLastPathSegment;
 
-  return [pathSegments.join("/"), isMarkdownFile, isHome];
+  return [pathSegments.join("/"), isMarkdownOrHTMLFile, isHome];
 }
 
 const marked = new Marked(
@@ -70,8 +65,8 @@ function parseMarkdown(content) {
 }
 
 function handleFileOutput(path) {
-  const [newPath, isMarkdownFile, isHome] = getNewPath(path);
-  if (isMarkdownFile) {
+  const [newPath, isMarkdownOrHTMLFile, isHome] = getNewPath(path);
+  if (isMarkdownOrHTMLFile) {
     if (isHome) {
       fs.outputFileSync(
         __dirname + "index.html",
@@ -90,8 +85,13 @@ function handleFileOutput(path) {
   }
 }
 
-async function init() {
-  watcher
+function createContentWatcher() {
+  const contentWatcher = chokidar.watch(`${__dirname}content`, {
+    ignored: /(^|[\/\\])\../, // ignore dotfiles
+    persistent: true,
+  });
+
+  contentWatcher
     .on("add", (path) => {
       console.log(`File ${path} has been added`);
       handleFileOutput(path);
@@ -102,8 +102,8 @@ async function init() {
     })
     .on("unlink", (path) => {
       console.log(`File ${path} has been removed`);
-      const [newPath, isMarkdownFile, isHome] = getNewPath(path);
-      if (isMarkdownFile && !isHome) {
+      const [newPath, isMarkdownOrHTMLFile, isHome] = getNewPath(path);
+      if (isMarkdownOrHTMLFile && !isHome) {
         fs.removeSync(newPath);
       }
     })
@@ -129,6 +129,29 @@ async function init() {
     })
     .on("raw", (event, path, details) => {
       console.log("Raw event info:", event, path, details);
+    });
+
+  return contentWatcher;
+}
+
+async function init() {
+  let contentWatcher = createContentWatcher();
+
+  const baseHTMLWatcher = chokidar.watch(`${__dirname}base.html`, {
+    ignored: /(^|[\/\\])\../, // ignore dotfiles
+    persistent: true,
+  });
+
+  baseHTMLWatcher
+    .on("add", async (path) => {
+      console.log(`File ${path} has been added`);
+      contentWatcher.close();
+      contentWatcher = createContentWatcher();
+    })
+    .on("change", async (path) => {
+      console.log(`File ${path} has been changed`);
+      contentWatcher.close();
+      contentWatcher = createContentWatcher();
     });
 
   const server = await createServer({
