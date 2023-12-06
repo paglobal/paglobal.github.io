@@ -128,7 +128,7 @@ function createContentWatcher() {
       console.log("Initial scan complete. Ready for changes");
     })
     .on("raw", (event, path, details) => {
-      console.log("Raw event info:", event, path, details);
+      // console.log("Raw event info:", event, path, details);
     });
 
   return contentWatcher;

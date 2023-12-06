@@ -10,13 +10,17 @@ class SiteElement extends HTMLElement {
     super();
 
     this.light = {
-      primaryFill: "white",
-      primaryStroke: "black",
+      primaryFill: "#FEFEFE",
+      primaryStroke: "#181818",
+      secondaryStroke: "#222222",
+      tertiaryStroke: "#333333",
       primaryAccent: "#347DA7",
     };
     this.dark = {
-      primaryFill: "black",
-      primaryStroke: "white",
+      primaryFill: "#181818",
+      primaryStroke: "#EFEFEF",
+      secondaryStroke: "#DDDDDD",
+      tertiaryStroke: "#CCCCCC",
       primaryAccent: "#55BFF6",
     };
   }

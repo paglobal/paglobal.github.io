@@ -23,6 +23,12 @@ class MySite extends SiteElement {
   connectedCallback() {
     super.connectedCallback();
     this.updateState("themeMode", localStorage.getItem("studioThemeMode"));
+    // Apply external styles to the shadow dom
+    const link = document.createElement("link");
+    link.className = "code";
+    link.setAttribute("rel", "stylesheet");
+    link.setAttribute("href", `code-${this.themeMode}.css`);
+    document.head.appendChild(link);
   }
 
   hamburgerIcon() {
@@ -53,15 +59,13 @@ class MySite extends SiteElement {
     </svg>`;
   }
 
-  render() {
-    super.render();
-    document.body.style = css`
-      background: ${this[this.themeMode].primaryFill};
-    `;
-  }
-
   renderHTML() {
+    // use `setTimeout` to ensure that elements exist when we try to grab them
     setTimeout(() => {
+      document
+        .querySelector("link.code")
+        .setAttribute("href", `code-${this.themeMode}.css`);
+
       this.shadow.querySelector(".nav-themeMode-toggle").onclick = () => {
         this.updateState(
           "themeMode",
@@ -87,12 +91,38 @@ class MySite extends SiteElement {
         });
 
       document.querySelectorAll("*").forEach((element) => {
-        element.style = css`
-          color: ${this[this.themeMode].primaryStroke};
-        `;
+        if (
+          element.tagName !== "SPAN" &&
+          element.tagName !== "CODE" &&
+          !element.className.includes("hljs")
+        ) {
+          if (
+            element.tagName === "P" ||
+            element.tagName === "DIV" ||
+            element.tagName === "UL"
+          ) {
+            element.style = css`
+              color: ${this[this.themeMode].tertiaryStroke};
+            `;
+          } else {
+            element.style = css`
+              color: ${this[this.themeMode].primaryStroke};
+            `;
+          }
+        } else {
+          if (element.tagName === "CODE") {
+            element.style = css`
+              background: ${this[this.themeMode].primaryFill};
+            `;
+          }
+        }
       });
 
       document.body.style = css`
+        background: ${this[this.themeMode].primaryFill};
+      `;
+
+      document.documentElement.style = css`
         background: ${this[this.themeMode].primaryFill};
       `;
     });
@@ -105,14 +135,12 @@ class MySite extends SiteElement {
         </a>
         <div class="nav-icons">
           <span class="nav-icon nav-themeMode-toggle">
-            ${this.themeMode === "light" ? this.sunIcon() : this.moonIcon()}
+            ${this.themeMode === "dark" ? this.sunIcon() : this.moonIcon()}
           </span>
           <span class="nav-icon nav-modal-toggle">
-            ${
-              this.navModalState === "closed"
-                ? this.hamburgerIcon()
-                : this.closeIcon()
-            }
+            ${this.navModalState === "closed"
+              ? this.hamburgerIcon()
+              : this.closeIcon()}
           </span>
         </div>
         <div class="nav-modal">
@@ -126,7 +154,12 @@ class MySite extends SiteElement {
           <a href="/pages/posts/index.html" class="nav-modal-entry">Posts</a>
         </div>
       </div>
-      <div class="content"><slot><slot></div>
+      <div class="content">
+        <div><slot></slot></div>
+      </div>
+      <div class="copyright">
+        Copyright © ${new Date().getFullYear()} Paul Amoah
+      </div>
     </div>`;
   }
 
@@ -151,19 +184,19 @@ class MySite extends SiteElement {
       .container {
         background: ${this[this.themeMode].primaryFill};
         width: 100vw;
-        height: max-content;
+        min-height: calc(100% - 4rem);
         display: flex;
-        justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 3rem 0;
+        padding-top: 4rem;
+        position: relative;
       }
 
       .nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: min(600px, 90vw);
+        width: min(800px, 85vw);
       }
 
       .nav-main-container {
@@ -182,7 +215,7 @@ class MySite extends SiteElement {
       .nav-title {
         font-size: 1.25em;
         font-weight: bold;
-        color: ${this[this.themeMode].primaryStroke};
+        color: ${this[this.themeMode].secondaryStroke};
       }
 
       .nav-icons {
@@ -211,14 +244,14 @@ class MySite extends SiteElement {
         align-items: center;
         gap: 1.5rem;
         position: absolute;
-        top: calc(9rem);
+        top: 10rem;
         left: 50%;
         transform: translate(-50%, 0);
         z-index: 99;
         border: 2px solid ${this[this.themeMode].primaryAccent};
         border-radius: 0.5rem;
         padding: 2rem;
-        width: min(400px, 70vw);
+        width: min(700px, 70vw);
         background: ${this[this.themeMode].primaryFill};
       }
 
@@ -228,16 +261,31 @@ class MySite extends SiteElement {
       }
 
       .content {
-        width: min(700px, 80vw);
+        width: min(800px, 85vw);
         height: max-content;
         display: flex;
         align-items: center;
-        margin-top: 6rem;
+        margin-top: 3rem;
         justify-content: center;
+        flex-direction: column;
+        overflow-x: auto;
       }
 
-      .content ::slotted(*)) {
-        color: ${this[this.themeMode].primaryStroke} !important;
+      .content div {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+        overflow-wrap: break-word;
+        hyphens: manual;
+        padding-bottom: 8rem;
+      }
+
+      .container .copyright {
+        padding-bottom: 3rem;
+        color: ${this[this.themeMode].tertiaryStroke};
+        font-size: 0.9rem;
+        position: absolute;
+        bottom: 0px;
       }
     `;
   }
