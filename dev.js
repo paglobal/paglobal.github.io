@@ -74,7 +74,7 @@ function handleFileOutput(path) {
       );
       fs.outputFileSync(
         __dirname + "404.html",
-        wrapWithBase(parseMarkdown(fs.readFileSync(path, "utf8"))),
+        wrapWithBase(`<script>window.location.replace("/")</script>`),
       );
     } else {
       fs.outputFileSync(

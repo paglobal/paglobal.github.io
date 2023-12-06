@@ -7,7 +7,8 @@ const serve404 = () => ({
     server.middlewares.use((req, _, next) => {
       if (
         !fs.existsSync(__dirname + req.url) &&
-        path.extname(req.url) === ".html"
+        path.extname(req.url) === ".html" &&
+        req.url.includes("pages")
       ) {
         req.url = "/404.html";
       }
