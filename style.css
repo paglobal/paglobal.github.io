@@ -2,28 +2,28 @@
   font-family: "JetBrains Mono";
   font-weight: normal;
   font-style: normal;
-  src: url(./assets/fonts/jetbrains-mono/JetBrainsMono-Regular.ttf);
+  src: url(/assets/fonts/jetbrains-mono/JetBrainsMono-Regular.ttf);
 }
 
 @font-face {
   font-family: "JetBrains Mono";
   font-weight: normal;
   font-style: italic;
-  src: url(./assets/fonts/jetbrains-mono/JetBrainsMono-Italic.ttf);
+  src: url(/assets/fonts/jetbrains-mono/JetBrainsMono-Italic.ttf);
 }
 
 @font-face {
   font-family: "JetBrains Mono";
   font-weight: bold;
   font-style: normal;
-  src: url(./assets/fonts/jetbrains-mono/JetBrainsMono-Bold.ttf);
+  src: url(/assets/fonts/jetbrains-mono/JetBrainsMono-Bold.ttf);
 }
 
 @font-face {
   font-family: "JetBrains Mono";
   font-weight: bold;
   font-style: italic;
-  src: url(./assets/fonts/jetbrains-mono/JetBrainsMono-BoldItalic.ttf);
+  src: url(/assets/fonts/jetbrains-mono/JetBrainsMono-BoldItalic.ttf);
 }
 
 * {

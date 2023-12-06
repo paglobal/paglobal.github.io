@@ -1,6 +1,9 @@
 class MySite extends SiteElement {
   constructor() {
     super();
+
+    this.themeMode = "light";
+    this.navModalState = "closed";
   }
 
   closeIcon() {
@@ -17,10 +20,9 @@ class MySite extends SiteElement {
     </svg>`;
   }
 
-  updateState(stateName, newState) {
-    this[stateName] =
-      newState !== undefined && newState !== null ? newState : this[stateName];
-    this.render();
+  connectedCallback() {
+    super.connectedCallback();
+    this.updateState("themeMode", localStorage.getItem("studioThemeMode"));
   }
 
   hamburgerIcon() {
@@ -59,12 +61,13 @@ class MySite extends SiteElement {
   }
 
   renderHTML() {
-    queueMicrotask(() => {
+    setTimeout(() => {
       this.shadow.querySelector(".nav-themeMode-toggle").onclick = () => {
         this.updateState(
           "themeMode",
           this.themeMode === "dark" ? "light" : "dark",
         );
+        localStorage.setItem("studioThemeMode", this.themeMode);
       };
 
       this.shadow.querySelector(".nav-modal-toggle").onclick = () => {
@@ -82,12 +85,22 @@ class MySite extends SiteElement {
             color: ${this[this.themeMode].primaryAccent};
           `;
         });
+
+      document.querySelectorAll("*").forEach((element) => {
+        element.style = css`
+          color: ${this[this.themeMode].primaryStroke};
+        `;
+      });
+
+      document.body.style = css`
+        background: ${this[this.themeMode].primaryFill};
+      `;
     });
 
     return html`<div class="container">
       <div class="nav">
         <a href="/" class="nav-main-container">
-          <img class="nav-image" src="./assets/me.jpg" />
+          <img class="nav-image" src="/assets/me.jpg" />
           <p class="nav-title">Paul Amoah</p>
         </a>
         <div class="nav-icons">
@@ -95,21 +108,25 @@ class MySite extends SiteElement {
             ${this.themeMode === "light" ? this.sunIcon() : this.moonIcon()}
           </span>
           <span class="nav-icon nav-modal-toggle">
-            ${this.navModalState === "closed"
-              ? this.hamburgerIcon()
-              : this.closeIcon()}
+            ${
+              this.navModalState === "closed"
+                ? this.hamburgerIcon()
+                : this.closeIcon()
+            }
           </span>
         </div>
         <div class="nav-modal">
-          <a href="/home" class="nav-modal-entry">Home</a>
-          <a href="/projects" class="nav-modal-entry">Projects</a>
-          <a href="/research" class="nav-modal-entry">Research</a>
-          <a href="/posts" class="nav-modal-entry">Posts</a>
+          <a href="/" class="nav-modal-entry">Home</a>
+          <a href="/pages/projects/index.html" class="nav-modal-entry"
+            >Projects</a
+          >
+          <a href="/pages/research/index.html" class="nav-modal-entry"
+            >Research</a
+          >
+          <a href="/pages/posts/index.html" class="nav-modal-entry">Posts</a>
         </div>
       </div>
-      <div class="content">
-        <slot>No Content!</slot>
-      </div>
+      <div class="content"><slot><slot></div>
     </div>`;
   }
 
@@ -217,6 +234,10 @@ class MySite extends SiteElement {
         align-items: center;
         margin-top: 6rem;
         justify-content: center;
+      }
+
+      .content ::slotted(*)) {
+        color: ${this[this.themeMode].primaryStroke} !important;
       }
     `;
   }

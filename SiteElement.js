@@ -9,8 +9,6 @@ class SiteElement extends HTMLElement {
   constructor() {
     super();
 
-    this.themeMode = "light";
-    this.navModalState = "closed";
     this.light = {
       primaryFill: "white",
       primaryStroke: "black",
@@ -27,11 +25,17 @@ class SiteElement extends HTMLElement {
     this.shadow = this.attachShadow({ mode: "open" });
     this.styleSheet = new CSSStyleSheet();
     this.shadow.adoptedStyleSheets = [this.styleSheet];
-    this.updateState("themeMode", localStorage.getItem("studioThemeMode"));
+    this.render();
   }
 
   render() {
     this.shadow.innerHTML = this.renderHTML();
     this.styleSheet.replaceSync(this.renderStyleSheet());
+  }
+
+  updateState(stateName, newState) {
+    this[stateName] =
+      newState !== undefined && newState !== null ? newState : this[stateName];
+    this.render();
   }
 }
