@@ -4,28 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
-    <!-- <link rel="stylesheet" href="/hljs.min.css" /> -->
     <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.svg" />
     <base href="/" />
     <title>Paul Amoah</title>
   </head>
   <body>
-    <!-- please do not edit the contents of the `my-site` tag. it is used to render and style the markdown content -->
-    <my-site>
-      <h1>Research</h1>
-
+    <template>
       <style>
-        * {
-        }
-
         h1 {
-          font-size: 1.75rem;
+          font-size: 1.5rem;
           margin: 1.25rem 0;
+          color: var(--primary-stroke);
         }
 
         h2 {
-          font-size: 1.4rem;
+          font-size: 1.35rem;
           margin: 1.25rem 0;
+          color: var(--primary-stroke);
         }
 
         h3,
@@ -34,6 +29,13 @@
         h6 {
           font-size: 1.25rem;
           margin: 1.25rem 0;
+          color: var(--primary-stroke);
+        }
+
+        p,
+        div,
+        ul {
+          color: var(--tertiary-stroke);
         }
 
         p,
@@ -43,9 +45,17 @@
           font-size: 0.9rem;
           margin: 0.75rem 0;
         }
+
+        a {
+          color: var(--tertiary-stroke);
+        }
       </style>
-    </my-site>
-    <script src="/SiteElement.js"></script>
-    <script src="/my-site.js"></script>
+      <!-- please do not edit the contents of the the `div` tag below. it is used to render and style the markdown content -->
+      <div class="template-content"><h1>Research</h1>
+</div>
+    </template>
+    <style class="shell-style-sheet"></style>
+    <div class="shell-html"></div>
+    <script src="/app.js"></script>
   </body>
 </html>

@@ -10,3 +10,13 @@
 - Add build script.
 - Provide configuration options (eg. an option to help deal with `https://<USERNAME>.github.io/<REPO>/` issue).
 - Refine and restructure project.
+- Make asset directory emit events.
+- Style tags properly. Carefully exclude some tags from styles as well.
+- Provide easy way of customization (ie. title, nav links, etc...)
+
+## Make it your own
+
+- Edit page title in [base.html](base.html).
+- Change [me.jpg](/assets/photos/me.jpg) (please maintain `me.jpg` as the name of the photo).
+- Change [favicon.svg](/assets/icons/favicon.svg) (please maintain `favicon.svg` as the name of the icons).
+- Change the nav title in the `navSection` component in [app.js](app.js)
