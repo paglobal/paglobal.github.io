@@ -135,10 +135,6 @@ function renderShellHTML() {
       .querySelector("link.code")
       .setAttribute("href", `code-${state.themeMode}.css`);
 
-    document
-      .querySelector(".content")
-      .appendChild(document.querySelector("template").content.cloneNode(true));
-
     document.querySelector(".nav-themeMode-toggle").onclick = () => {
       if (document.body.classList.contains("dark")) {
         document.body.classList.remove("dark");
@@ -170,7 +166,7 @@ function renderShellHTML() {
 
   return html`
     ${components.navSection()}
-    <div class="content"></div>
+    <div class="content">${document.querySelector("template").innerHTML}</div>
     <div class="copyright">
       Copyright © ${new Date().getFullYear()} Paul Amoah
     </div>
@@ -230,6 +226,7 @@ function renderShellStyleSheet() {
       cursor: pointer;
       padding: 0.3rem 0.3rem 0 0.3rem;
       border-radius: 0.2rem;
+      color: var(--primary-stroke);
     }
 
     .nav-icon:hover {
