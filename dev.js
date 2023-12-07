@@ -52,10 +52,17 @@ const marked = new Marked(
   }),
 );
 
-function wrapWithBase(parsedContent) {
-  return fs
-    .readFileSync(__dirname + "base.html", "utf8")
-    .replace("__content_marker__", parsedContent);
+function wrapWithBase(parsedContent, isRedirectScript) {
+  return (
+    fs
+      .readFileSync(__dirname + "base.html", "utf8")
+      .replace("__content_marker__", parsedContent)
+      // for 404 redirection
+      .replace(
+        "__script_marker__",
+        isRedirectScript === "isRedirectScript" ? parsedContent : "",
+      )
+  );
 }
 
 function parseMarkdown(content) {
@@ -74,7 +81,10 @@ function handleFileOutput(path) {
       );
       fs.outputFileSync(
         __dirname + "404.html",
-        wrapWithBase(`<script>window.location.replace("/")</script>`),
+        wrapWithBase(
+          `<script>window.location.replace("/")</script>`,
+          "isRedirectScript",
+        ),
       );
     } else {
       fs.outputFileSync(

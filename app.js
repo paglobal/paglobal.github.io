@@ -497,7 +497,7 @@ function renderShellStyleSheet() {
       align-items: center;
       gap: 1.5rem;
       position: absolute;
-      top: 7.5rem;
+      top: 8.5rem;
       left: 50%;
       transform: translate(-50%, 0);
       z-index: 99;

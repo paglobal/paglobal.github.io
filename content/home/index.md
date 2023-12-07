@@ -1,10 +1,6 @@
-# Welcome to My Internet Abode!
+# Welcome to my internet abode!
 
-```js
-function main() {
-  return 25;
-}
-```
+I am Paul and here's my home.
 
 <style>
     svg {
