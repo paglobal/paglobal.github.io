@@ -77,3 +77,27 @@ body {
 :not(:defined) {
   visibility: hidden;
 }
+
+a:hover {
+  text-decoration-color: var(--primary-accent);
+  color: var(--primary-accent);
+  text-decoration-thickness: 0.15rem;
+  transform: scale(1.1);
+  transition: all 0.1s;
+}
+
+a:focus,
+button:focus {
+  outline: none !important;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

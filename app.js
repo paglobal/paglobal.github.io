@@ -427,22 +427,6 @@ function renderShellHTML() {
 
 function renderShellStyleSheet() {
   return css`
-    a:focus,
-    button:focus {
-      outline: none !important;
-    }
-
-    a,
-    button {
-      -webkit-tap-highlight-color: transparent;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
     .nav {
       display: flex;
       justify-content: space-between;

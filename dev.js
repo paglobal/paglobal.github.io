@@ -56,7 +56,10 @@ function wrapWithBase(parsedContent, isRedirectScript) {
   return (
     fs
       .readFileSync(__dirname + "base.html", "utf8")
-      .replace("__content_marker__", parsedContent)
+      .replace(
+        "__content_marker__",
+        isRedirectScript === "isRedirectScript" ? "" : parsedContent,
+      )
       // for 404 redirection
       .replace(
         "__script_marker__",
@@ -144,10 +147,13 @@ function createContentWatcher() {
 async function init() {
   let contentWatcher = createContentWatcher();
 
-  const baseHTMLWatcher = chokidar.watch(`${__dirname}base.html`, {
-    ignored: /(^|[\/\\])\../, // ignore dotfiles
-    persistent: true,
-  });
+  const baseHTMLWatcher = chokidar.watch(
+    [`${__dirname}base.html`, `${__dirname}assets`],
+    {
+      ignored: /(^|[\/\\])\../, // ignore dotfiles
+      persistent: true,
+    },
+  );
 
   baseHTMLWatcher
     .on("add", async (path) => {
