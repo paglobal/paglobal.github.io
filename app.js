@@ -204,6 +204,7 @@ function renderShellStyleSheet() {
       align-items: center;
       gap: 1.5rem;
       text-decoration: none;
+      width: min-content;
     }
 
     .nav-image {
@@ -251,7 +252,7 @@ function renderShellStyleSheet() {
       border: 2px solid var(--primary-accent);
       border-radius: 0.5rem;
       padding: 2rem;
-      width: min(700px, 70vw);
+      width: min(700px, 80vw);
       background: var(--primary-fill);
     }
 
@@ -286,6 +287,7 @@ function renderShellStyleSheet() {
     .copyright {
       color: var(--tertiary-stroke);
       font-size: 0.75rem;
+      font-weight: bold;
       position: absolute;
       bottom: 0;
       margin: 0;
