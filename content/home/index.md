@@ -50,6 +50,8 @@ function main() {
 
 _weeeeeeeeeeeeeeee_
 
+[weeeeeeeeeeeeeeee](google.com)
+
 <div>This is a div</div>
 
 - item 1

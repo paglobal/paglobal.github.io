@@ -214,7 +214,7 @@ function renderShellStyleSheet() {
     .nav-title {
       font-size: 1.25em;
       font-weight: bold;
-      color: var(--secondary-stroke);
+      color: var(--primary-stroke);
     }
 
     .nav-icons {

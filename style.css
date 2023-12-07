@@ -29,18 +29,18 @@
 html,
 body {
   --primary-fill: #fefefe;
-  --primary-stroke: #181818;
-  --secondary-stroke: #222222;
-  --tertiary-stroke: #333333;
+  --primary-stroke: #22272a;
+  --secondary-stroke: #262b2e;
+  --tertiary-stroke: #4b5563;
   --primary-accent: #347da7;
 }
 
 html.dark,
 body.dark {
-  --primary-fill: #181818;
-  --primary-stroke: #efefef;
-  --secondary-stroke: #dddddd;
-  --tertiary-stroke: #cccccc;
+  --primary-fill: #1c1e20;
+  --primary-stroke: #ededed;
+  --secondary-stroke: #c8c9cb;
+  --tertiary-stroke: #9ca3af;
   --primary-accent: #55bff6;
 }
 
