@@ -245,14 +245,14 @@ function renderShellStyleSheet() {
       align-items: center;
       gap: 1.5rem;
       position: absolute;
-      top: 10rem;
+      top: 7.5rem;
       left: 50%;
       transform: translate(-50%, 0);
       z-index: 99;
       border: 2px solid var(--primary-accent);
       border-radius: 0.5rem;
       padding: 2rem;
-      width: min(700px, 80vw);
+      width: min(800px, 85vw);
       background: var(--primary-fill);
     }
 
