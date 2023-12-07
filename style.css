@@ -78,14 +78,6 @@ body {
   visibility: hidden;
 }
 
-a:hover {
-  text-decoration-color: var(--primary-accent);
-  color: var(--primary-accent);
-  text-decoration-thickness: 0.15rem;
-  transform: scale(1.1);
-  transition: all 0.1s;
-}
-
 a:focus,
 button:focus {
   outline: none !important;

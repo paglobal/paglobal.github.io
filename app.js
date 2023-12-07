@@ -440,7 +440,7 @@ function renderShellStyleSheet() {
       align-items: center;
       gap: 1.5rem;
       text-decoration: none;
-      width: min-content;
+      width: 20vw;
     }
 
     .nav-image {
@@ -449,9 +449,10 @@ function renderShellStyleSheet() {
     }
 
     .nav-title {
-      font-size: 1.25em;
+      font-size: 1.5rem;
       font-weight: bold;
       color: var(--primary-stroke);
+      padding: 0;
     }
 
     .nav-icons {
@@ -496,6 +497,11 @@ function renderShellStyleSheet() {
       font-size: 1rem;
       text-decoration: none;
       color: var(--primary-accent);
+    }
+
+    .nav-modal-entry:hover {
+      transform: scale(1.05);
+      transition: all 0.1s;
     }
 
     .content {

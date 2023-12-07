@@ -10,9 +10,9 @@
 - Add build script.
 - Provide configuration options (eg. an option to help deal with `https://<USERNAME>.github.io/<REPO>/` issue).
 - Refine and restructure project.
-- Make asset directory emit events.
 - Style tags properly. Carefully exclude some tags from styles as well.
-- Provide easy way of customization (ie. title, nav links, etc...)
+- Provide easy way of customization (ie. title, nav links, etc...).
+- Refine redirection algorithm for development.
 
 ## Make it your own
 
