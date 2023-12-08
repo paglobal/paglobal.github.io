@@ -52,20 +52,10 @@ const marked = new Marked(
   }),
 );
 
-function wrapWithBase(parsedContent, isRedirectScript) {
-  return (
-    fs
-      .readFileSync(__dirname + "base.html", "utf8")
-      .replace(
-        "__content_marker__",
-        isRedirectScript === "isRedirectScript" ? "" : parsedContent,
-      )
-      // for 404 redirection
-      .replace(
-        "__script_marker__",
-        isRedirectScript === "isRedirectScript" ? parsedContent : "",
-      )
-  );
+function wrapWithBase(parsedContent) {
+  return fs
+    .readFileSync(__dirname + "base.html", "utf8")
+    .replace("__content_marker__", parsedContent);
 }
 
 function parseMarkdown(content) {
@@ -85,8 +75,7 @@ function handleFileOutput(path) {
       fs.outputFileSync(
         __dirname + "404.html",
         wrapWithBase(
-          `<script>window.location.replace("/")</script>`,
-          "isRedirectScript",
+          `<div class="not-found"><a href="/">404<br>Oops, Page Not Found<br>Please Click To Go Back Home</a></div>`,
         ),
       );
     } else {

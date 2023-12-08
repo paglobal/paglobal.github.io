@@ -66,12 +66,11 @@
 
         ul,
         ol {
-          padding-top: 0;
           padding-bottom: 1.5rem;
         }
 
         li {
-          padding: 0.25rem;
+          padding: 0.1rem;
           font-size: 1rem;
         }
 
@@ -93,6 +92,7 @@
           text-decoration-thickness: 0.15rem;
         }
 
+        .last-updated,
         .article-date {
           color: var(--tertiary-stroke);
           margin-top: -0.5rem;
@@ -101,15 +101,21 @@
           font-size: 0.9rem;
         }
 
-        .article-date::before {
-          content: "Last updated: ";
+        .article-date {
+          font-weight: bold;
+        }
+
+        .last-updated {
+          margin-top: -1.3rem;
+        }
+
+        .last-updated::before {
+          content: "Last Updated: ";
         }
       </style>
       <!-- please do not edit the contents of the the `div` tag below. it is used to render and style the markdown content -->
       <div class="template-content">__content_marker__</div>
     </template>
-    <!-- please do not edit the text down below. it is used to enable 404 redirection -->
-    __script_marker__
     <style class="shell-style-sheet"></style>
     <div class="shell-html"></div>
     <script src="/app.js"></script>

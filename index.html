@@ -66,12 +66,11 @@
 
         ul,
         ol {
-          padding-top: 0;
           padding-bottom: 1.5rem;
         }
 
         li {
-          padding: 0.25rem;
+          padding: 0.1rem;
           font-size: 1rem;
         }
 
@@ -93,6 +92,7 @@
           text-decoration-thickness: 0.15rem;
         }
 
+        .last-updated,
         .article-date {
           color: var(--tertiary-stroke);
           margin-top: -0.5rem;
@@ -101,8 +101,16 @@
           font-size: 0.9rem;
         }
 
-        .article-date::before {
-          content: "Last updated: ";
+        .article-date {
+          font-weight: bold;
+        }
+
+        .last-updated {
+          margin-top: -1.3rem;
+        }
+
+        .last-updated::before {
+          content: "Last Updated: ";
         }
       </style>
       <!-- please do not edit the contents of the the `div` tag below. it is used to render and style the markdown content -->
@@ -119,7 +127,7 @@
 </style>
 
 <h1>Hi!</h1>
-<p>I&#39;m Paul. I&#39;m Christian. I love <a href="/pages/projects/index.html">building cool stuff</a> and listening to music. Welcome to my humble abode on the internet.</p>
+<p>I&#39;m Paul. I love <a href="/pages/projects/index.html">building cool stuff</a> and <a href="https://open.spotify.com/user/31s5ydr7seg6skwswz7gldckngxq">listening to music</a>. Welcome to my humble abode on the internet.</p>
 <p>While you&#39;re here, have a look a my <a href="/pages/projects/index.html">projects</a>, <a href="/pages/research/index.html">research</a>, and <a href="/pages/posts/index.html">posts</a>.</p>
 <p>You can also find me here:</p>
 <p>
@@ -138,8 +146,6 @@
 </p>
 </div>
     </template>
-    <!-- please do not edit the text down below. it is used to enable 404 redirection -->
-    
     <style class="shell-style-sheet"></style>
     <div class="shell-html"></div>
     <script src="/app.js"></script>

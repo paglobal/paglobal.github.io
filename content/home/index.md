@@ -12,7 +12,7 @@
 
 # Hi!
 
-I'm Paul. I'm Christian. I love [building cool stuff](/pages/projects/index.html) and listening to music. Welcome to my humble abode on the internet.
+I'm Paul. I love [building cool stuff](/pages/projects/index.html) and [listening to music](https://open.spotify.com/user/31s5ydr7seg6skwswz7gldckngxq). Welcome to my humble abode on the internet.
 
 While you're here, have a look a my [projects](/pages/projects/index.html), [research](/pages/research/index.html), and [posts](/pages/posts/index.html).
 

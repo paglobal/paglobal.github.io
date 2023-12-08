@@ -528,8 +528,8 @@ function renderShellStyleSheet() {
 
     .copyright {
       color: var(--tertiary-stroke);
-      font-size: 0.75rem;
-      font-weight: bold;
+      font-size: 0.85rem;
+      /* font-weight: bold; */
       position: absolute;
       bottom: 0;
       margin: 0;

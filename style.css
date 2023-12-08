@@ -58,7 +58,6 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  user-select: none;
   background: var(--primary-stroke);
   overflow-x: hidden;
 }
@@ -88,9 +87,18 @@ a,
 button {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  /* -webkit-user-select: none; */
+  /* -khtml-user-select: none; */
+  /* -moz-user-select: none; */
+  /* -ms-user-select: none; */
+  /* user-select: none; */
+}
+
+.not-found {
+  font-size: 1.5rem;
+  margin-top: 5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
