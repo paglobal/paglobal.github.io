@@ -39,6 +39,16 @@
           padding-bottom: 1rem;
         }
 
+        h1::before,
+        h2::before,
+        h3::before,
+        h4::before,
+        h5::before,
+        h6::before {
+          content: "# ";
+          color: var(--primary-accent);
+        }
+
         p,
         div,
         ul,
@@ -56,13 +66,13 @@
 
         ul,
         ol {
-          font-size: 0.9rem;
           padding-top: 0;
           padding-bottom: 1.5rem;
         }
 
         li {
           padding: 0.25rem;
+          font-size: 1rem;
         }
 
         ul {
@@ -88,6 +98,11 @@
           margin-top: -0.5rem;
           padding-top: 0rem;
           padding-bottom: 1.75rem;
+          font-size: 0.9rem;
+        }
+
+        .article-date::before {
+          content: "Last updated: ";
         }
       </style>
       <!-- please do not edit the contents of the the `div` tag below. it is used to render and style the markdown content -->

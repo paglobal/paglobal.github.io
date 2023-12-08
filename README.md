@@ -13,6 +13,7 @@
 - Style tags properly. Carefully exclude some tags from styles as well.
 - Provide easy way of customization (ie. title, nav links, etc...).
 - Refine redirection algorithm for development.
+- Make [404.html](404.html) an actual 404 page instead of a redirection page to [index.html](index.html).
 
 ## Make it your own
 
