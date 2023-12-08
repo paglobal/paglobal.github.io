@@ -49,6 +49,7 @@ body.dark {
   margin: 0;
   box-sizing: border-box;
   font-family: "JetBrains Mono", monospace;
+  line-height: 150%;
 }
 
 html,

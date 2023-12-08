@@ -2,10 +2,11 @@
     .social-icon {
         text-decoration: none;
         padding-bottom: 1.5rem;
+        margin-right: 0.5rem;
     }
 
     .social-icon svg {
-        height: 1.5rem;
+        height: 1.75rem;
     }
 </style>
 
