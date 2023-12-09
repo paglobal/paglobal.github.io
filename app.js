@@ -420,7 +420,17 @@ function renderShellHTML() {
     ${components.navSection()}
     <div class="content">${document.querySelector("template").innerHTML}</div>
     <div class="copyright">
-      Copyright © ${new Date().getFullYear()} Paul Amoah
+      Copyright © ${new Date().getFullYear()} Paul Amoah | Last Updated:
+      ${new Date()
+        .toDateString()
+        .split(" ")
+        .filter((_, index) => index !== 0)
+        .map((value, index) => (index === 1 ? `${value},` : value))
+        .join(" ")}<br />
+      Style adapted from
+      <a href="https://astro-theme-cactus.netlify.app/" target="_blank">
+        Astro Cactus Theme
+      </a>
     </div>
   `;
 }
@@ -529,7 +539,7 @@ function renderShellStyleSheet() {
     .copyright {
       color: var(--tertiary-stroke);
       font-size: 0.85rem;
-      /* font-weight: bold; */
+      text-align: center;
       position: absolute;
       bottom: 0;
       margin: 0;

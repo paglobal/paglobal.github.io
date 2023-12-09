@@ -37,6 +37,7 @@ body {
 
 html.dark,
 body.dark {
+  /* --primary-fill: #111; */
   --primary-fill: #1c1e20;
   --primary-stroke: #ededed;
   --secondary-stroke: #c8c9cb;
@@ -87,11 +88,6 @@ a,
 button {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  /* -webkit-user-select: none; */
-  /* -khtml-user-select: none; */
-  /* -moz-user-select: none; */
-  /* -ms-user-select: none; */
-  /* user-select: none; */
 }
 
 .not-found {

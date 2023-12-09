@@ -75,7 +75,7 @@ function handleFileOutput(path) {
       fs.outputFileSync(
         __dirname + "404.html",
         wrapWithBase(
-          `<div class="not-found"><a href="/">404<br>Oops, Page Not Found<br>Please Click To Go Back Home</a></div>`,
+          `<div class="not-found"><a href="/">404<br />Oops, Page Not Found<br />Please Click To Go Back Home</a></div>`,
         ),
       );
     } else {
