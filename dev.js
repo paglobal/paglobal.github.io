@@ -55,7 +55,16 @@ const marked = new Marked(
 function wrapWithBase(parsedContent) {
   return fs
     .readFileSync(__dirname + "base.html", "utf8")
-    .replace("__content_marker__", parsedContent);
+    .replace("__content_marker__", parsedContent)
+    .replace(
+      "__last_updated_marker__",
+      new Date()
+        .toDateString()
+        .split(" ")
+        .filter((_, index) => index !== 0)
+        .map((value, index) => (index === 1 ? `${value},` : value))
+        .join(" "),
+    );
 }
 
 function parseMarkdown(content) {

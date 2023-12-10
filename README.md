@@ -14,6 +14,7 @@
 - Provide easy way of customization (ie. title, nav links, etc...).
 - Refine redirection algorithm for development.
 - Add [Open Graph Meta Tags](https://ahrefs.com/blog/open-graph-meta-tags/).
+- Reload when [dev.js](dev.js) changes (maybe).
 
 ## Make it your own
 
