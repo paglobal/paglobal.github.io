@@ -97,3 +97,11 @@ button {
   text-align: center;
   width: 100%;
 }
+
+@media only screen and (max-width: 350px) {
+  html,
+  body,
+  :root {
+    font-size: 4.5vw;
+  }
+}
