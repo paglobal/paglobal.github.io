@@ -12,9 +12,9 @@
 
 # Hi!
 
-I'm Paul. I [build](/pages/projects/index.html) while [listening to music](https://open.spotify.com/user/31s5ydr7seg6skwswz7gldckngxq). I'm currently doing tons of Computer Architecture research in hopes of making some significant positive contributions.
+I'm Paul. I [build](/pages/projects/index.html) while [listening to music](https://open.spotify.com/user/31s5ydr7seg6skwswz7gldckngxq). I'm currently doing research in Computer Architecture.
 
-Welcome to my humble abode on the internet. While you're here, have a look a my [projects](/pages/projects/index.html), [research](/pages/research/index.html), and [posts](/pages/posts/index.html).
+Welcome to my home on the internet. While you're here, have a look a my [projects](/pages/projects/index.html), [research](/pages/research/index.html), and [posts](/pages/posts/index.html).
 
 <p>
 <a href="mailto:jackamoah.pa@gmail.com" target="_blank" class="social-icon">
