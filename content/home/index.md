@@ -12,11 +12,9 @@
 
 # Hi!
 
-I'm Paul. I love [building cool stuff](/pages/projects/index.html) and [listening to music](https://open.spotify.com/user/31s5ydr7seg6skwswz7gldckngxq). In terms of research, I'm currently very interested in Computer Architecture, Parallel Computing and Programming Languages and Compilers. Welcome to my humble abode on the internet.
+I'm Paul. I [build](/pages/projects/index.html) while [listening to music](https://open.spotify.com/user/31s5ydr7seg6skwswz7gldckngxq). I'm currently doing tons of Computer Architecture research in hopes of making some significant positive contributions.
 
-While you're here, have a look a my [projects](/pages/projects/index.html), [research](/pages/research/index.html), and [posts](/pages/posts/index.html).
-
-You can also find me here:
+Welcome to my humble abode on the internet. While you're here, have a look a my [projects](/pages/projects/index.html), [research](/pages/research/index.html), and [posts](/pages/posts/index.html).
 
 <p>
 <a href="mailto:jackamoah.pa@gmail.com" target="_blank" class="social-icon">
@@ -33,5 +31,8 @@ You can also find me here:
 </a>
 <a href="https://docs.google.com/document/d/1LVqGjrtyUqVdvQdTAJVlhOZOGNpXll0vSfyxT9TXESU/edit?usp=sharing" target="_blank" class="social-icon">
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path fill="currentColor" d="M249.18 328.324c-9.788 15.384-19.179 30.434-40.222 45.055c-11.256 7.89-37.164 23.306-73.99 23.306C64.709 396.685 8 345.605 8 255.801c0-78.486 53.345-140.486 128.466-140.486c30.434 0 57.474 10.521 77.387 26.304c18.414 14.65 27.038 29.304 34.563 42.456l-52.58 26.273c-3.762-8.626-8.29-17.649-19.913-27.406c-12.784-10.155-25.54-13.152-36.46-13.152c-42.821 0-65.364 39.825-65.364 84.145c0 58.238 29.7 87.143 65.364 87.143c34.563 0 48.48-24.042 57.474-39.426zm184.194-204.75H504l-92.037 265.22h-67.597l-90.904-265.22h70.625l54.843 188.6z"/></svg>
+</a>
+<a href="https://www.youtube.com/@paglobal" target="_blank" class="social-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="32" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597c-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821c11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z"/></svg>
 </a>
 </p>
