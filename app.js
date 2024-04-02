@@ -12,6 +12,7 @@ const state = {
       ? "dark"
       : "light"),
   navModalState: "closed",
+  lastUpdated: null,
 };
 
 const components = {
@@ -367,23 +368,6 @@ const codeStyleSheets = {
   },
 };
 
-function init() {
-  if (state.themeMode === "dark") {
-    document.body.classList.add("dark");
-    document.documentElement.classList.add("dark");
-  } else {
-    document.body.classList.remove("dark");
-    document.documentElement.classList.remove("dark");
-  }
-  render();
-}
-
-function render() {
-  document.querySelector(".shell-style-sheet").innerHTML =
-    renderShellStyleSheet();
-  document.querySelector(".shell-html").innerHTML = renderShellHTML();
-}
-
 function renderShellHTML() {
   // use `setTimeout` to ensure that elements exist when we try to grab them
   setTimeout(() => {
@@ -424,9 +408,12 @@ function renderShellHTML() {
     <div class="copyright">
       Copyright © ${new Date().getFullYear()} Paul Amoah
       <br />
-      Last Updated:
-      ${document.querySelector("template.last-updated-info").innerHTML}
-      <br />
+      ${state.lastUpdated
+        ? html`
+            Last Updated: ${state.lastUpdated}
+            <br />
+          `
+        : ""}
       Style adapted from
       <a href="https://astro-theme-cactus.netlify.app/" target="_blank">
         Astro Cactus Theme
@@ -552,10 +539,33 @@ function renderShellStyleSheet() {
   `;
 }
 
+function render() {
+  document.querySelector(".shell-style-sheet").innerHTML =
+    renderShellStyleSheet();
+  document.querySelector(".shell-html").innerHTML = renderShellHTML();
+}
+
 function updateState(stateName, newState) {
   state[stateName] =
     newState !== undefined && newState !== null ? newState : state[stateName];
   render();
 }
 
+async function updateLastUpdated() {
+  const lastUpdated = await (await fetch("last-updated.txt")).text();
+  updateState("lastUpdated", lastUpdated);
+}
+
+function init() {
+  if (state.themeMode === "dark") {
+    document.body.classList.add("dark");
+    document.documentElement.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+    document.documentElement.classList.remove("dark");
+  }
+  render();
+}
+
+updateLastUpdated();
 init();

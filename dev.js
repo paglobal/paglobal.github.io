@@ -55,16 +55,7 @@ const marked = new Marked(
 function wrapWithBase(parsedContent) {
   return fs
     .readFileSync(__dirname + "base.html", "utf8")
-    .replace("__content_marker__", parsedContent)
-    .replace(
-      "__last_updated_marker__",
-      new Date()
-        .toDateString()
-        .split(" ")
-        .filter((_, index) => index !== 0)
-        .map((value, index) => (index === 1 ? `${value},` : value))
-        .join(" "),
-    );
+    .replace("__content_marker__", parsedContent);
 }
 
 function parseMarkdown(content) {
@@ -77,6 +68,7 @@ function handleFileOutput(path) {
   const [newPath, isMarkdownOrHTMLFile, isHome] = getNewPath(path);
   if (isMarkdownOrHTMLFile) {
     if (isHome) {
+      // output other files if file is for home page
       fs.outputFileSync(
         __dirname + "index.html",
         wrapWithBase(parseMarkdown(fs.readFileSync(path, "utf8"))),
@@ -86,6 +78,15 @@ function handleFileOutput(path) {
         wrapWithBase(
           `<div class="not-found"><a href="/">404<br />Oops, Page Not Found<br />Please Click To Go Back Home</a></div>`,
         ),
+      );
+      fs.outputFileSync(
+        __dirname + "last-updated.txt",
+        new Date()
+          .toDateString()
+          .split(" ")
+          .filter((_, index) => index !== 0)
+          .map((value, index) => (index === 1 ? `${value},` : value))
+          .join(" "),
       );
     } else {
       fs.outputFileSync(
