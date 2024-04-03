@@ -1,3 +1,0 @@
-# Signal Based Systems And CRDTS For Collaborative Computer Architecture Simulation
-
-Coming soon...

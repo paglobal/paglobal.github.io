@@ -7,7 +7,7 @@ const css = html;
 
 const state = {
   themeMode:
-    localStorage.getItem("studioThemeMode") ||
+    localStorage.getItem("themeMode") ||
     (window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light"),
@@ -74,9 +74,6 @@ const components = {
         <a href="/" class="nav-modal-entry">Home</a>
         <a href="/pages/projects/index.html" class="nav-modal-entry"
           >Projects</a
-        >
-        <a href="/pages/research/index.html" class="nav-modal-entry"
-          >Research</a
         >
         <a href="/pages/posts/index.html" class="nav-modal-entry">Posts</a>
       </div>
@@ -376,12 +373,12 @@ function renderShellHTML() {
         document.body.classList.remove("dark");
         document.documentElement.classList.remove("dark");
         updateState("themeMode", "light");
-        localStorage.setItem("studioThemeMode", "light");
+        localStorage.setItem("themeMode", "light");
       } else {
         document.body.classList.add("dark");
         document.documentElement.classList.add("dark");
         updateState("themeMode", "dark");
-        localStorage.setItem("studioThemeMode", "dark");
+        localStorage.setItem("themeMode", "dark");
       }
     };
 
@@ -552,8 +549,13 @@ function updateState(stateName, newState) {
 }
 
 async function updateLastUpdated() {
-  const lastUpdated = await (await fetch("last-updated.txt")).text();
-  updateState("lastUpdated", lastUpdated);
+  try {
+    const lastUpdated = await (await fetch("last-updated.txt")).text();
+    updateState("lastUpdated", lastUpdated);
+  } catch (e) {
+    // don't handle errors. they'll probably be extremely rare given the nature of the request.
+    // also, we don't really care much if this doesn't work
+  }
 }
 
 function init() {

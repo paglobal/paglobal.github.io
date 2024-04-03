@@ -94,6 +94,8 @@ function handleFileOutput(path) {
         wrapWithBase(parseMarkdown(fs.readFileSync(path, "utf8"))),
       );
     }
+  } else {
+    fs.outputFileSync(newPath, fs.readFileSync(path, "utf8"));
   }
 }
 
