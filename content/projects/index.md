@@ -8,3 +8,4 @@ Here are some of my projects:
 - **[PromethiumJS](/pages/projects/promethium-js.html)**
 - **[Photon](/pages/projects/photon.html)**
 - **[The Original Game](/pages/projects/the-original-game.html)**
+- **[Augmented Tabflow](/pages/projects/augmented-tabflow.html)**
