@@ -79,7 +79,7 @@ Seems like you've already laid out the ground work for answering this question i
 
 ### Upcoming projects
 
-- **Develop a Tailwind CSS bundler plugin for Next.js.** Working with Vercel to make Tailwind work better Next? Of course yes!
+- **Develop a Tailwind CSS bundler plugin for Next.js.** Working with Vercel to make Tailwind work better with Next? Of course yes!
 
 - **Create a JavaScript library for running Tailwind CSS v4.0 in the browser.** These are the kinds of things I like to do for fun. To do this for my job would be an
   absolute dream!
@@ -105,11 +105,11 @@ I'm particularly proud of is [this one](https://github.com/runem/lit-analyzer/pu
 
 I do hope and pray that I get this job. If I do, I look forward to experimenting with things like:
 
-- Using Web Components for Headless UI (to target all other frameworks at once).
+- Implementing Headless UI with Web Components to target all other frameworks in one shot!
 - Trying out Go for performance critical parts of the Tailwind libraries.
 - Building a Tailwind debugger UI.
 - Implementing support for truly dynamic tailwind classes.
 
-That is of course if any of these are of interest to you. In any case, if I don't, I wish you guys all the very best. Keep at it with the great work you're doing.
+That is of course if any of these are of interest to you. In any case, if I don't get the job, I wish you guys all the very best. Keep at it with the great work you're doing.
 
 God bless y'all and until next time...hopefully!

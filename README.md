@@ -13,7 +13,7 @@
 - Style tags properly. Carefully exclude some tags from styles as well.
 - Provide easy way of customization (ie. title, nav links, etc...).
 - Refine redirection algorithm for development.
-- Add [Open Graph Meta Tags](https://ahrefs.com/blog/open-graph-meta-tags/).
+- Add support for [Open Graph Meta Tags](https://ahrefs.com/blog/open-graph-meta-tags/).
 - Reload when [dev.js](dev.js) changes (maybe).
 - Address responsiveness to the smallest of screen sizes (have a look at how [astro-cactus-theme](https://astro-theme-cactus.netlify.app/) handles this).
 - Add support for JS/TS in markdown for powering dynamic and interactive experiences.
