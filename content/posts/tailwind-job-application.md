@@ -2,7 +2,7 @@
 
 <p class="article-date">April 03, 2024</p>
 
-<p class="last-updated">April 04, 2024</p>
+<p class="last-updated">April 06, 2024</p>
 
 ## Hi!
 

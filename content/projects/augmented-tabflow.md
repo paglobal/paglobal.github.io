@@ -1,5 +1,6 @@
 # Augmented Tabflow
 
-A chrome extension I'm working on to increase my productivity with tab groups using tab group sessions (made that up). Also, I just wanted to build a chrome extension (happens way more than you would think). Anyways, I'm gonna finish it and upload it to the chrome web store pretty soon.
+This is an extension I built to increase my productivity in Chrome. I put it on the Chrome Web Store just in case others also find it useful. Consider [buying me a coffee](https://buymeacoffee.com/paglobal) if you find this extension useful, want to show some appreciation and can afford to. Regardless, the extension will remain free for everyone forever. Go forth and be productive!
 
 - [Source code](https://github.com/paglobal/augmented-tabflow)
+- [Extension page](https://chromewebstore.google.com/detail/augmented-tabflow/aaopjlakghchpkfolggoiblacllaekho)

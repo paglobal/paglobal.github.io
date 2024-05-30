@@ -10,9 +10,9 @@
     }
 </style>
 
-# Hi!
+# Hi there!
 
-I'm Paul and I [build](/pages/projects/index.html) stuff while [listening to music](https://open.spotify.com/user/31s5ydr7seg6skwswz7gldckngxq).
+I'm Paul. I [build stuff](/pages/projects/index.html) while [listening to music](https://open.spotify.com/user/31s5ydr7seg6skwswz7gldckngxq).
 
 Welcome to my side of the internet. While you're here, have a look a my [projects](/pages/projects/index.html) and [posts](/pages/posts/index.html).
 

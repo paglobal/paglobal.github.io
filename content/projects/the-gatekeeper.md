@@ -1,5 +1,5 @@
 # The Gatekeeper
 
-The Gatekeeper is a project whose direction I'm currently uncertain of, aside from the fact that it will probably be used to teach the Digital Systems course back at school. Currently, it's a very simple Computer Architecture simulator, kind of like [Logisim](http://www.cburch.com/logisim/) but with the added twist of collaborative editing, great for educational settings.
+It's a very simple digital circuit simulator, kind of like [Logisim](http://www.cburch.com/logisim/) but with collaborative circuit editing. Great for educational settings. Still very far from complete though.
 
 - [Source code](https://github.com/promethiumjs/promethium)
