@@ -83,7 +83,7 @@ const components = {
     return html`
       <div class="nav">
         <a href="/" class="nav-main-container">
-          <img class="nav-image" src="/assets/photos/me.jpg" />
+          <img class="nav-image" src="/assets/photos/me.png" />
           <p class="nav-title">Paul Amoah</p>
         </a>
         <div class="nav-icons">
